@@ -30,7 +30,7 @@
           </place>
           <place id="id9">
                <name>
-                    <text>Place1</text>
+                    <text>LandingQueue</text>
                </name>
                <initialMarking>
                     <text>0</text>
@@ -45,8 +45,8 @@
                </capacity>
                <toolspecific tool="Petri.NET" version="1.5.5945.12338">
                     <capacity>3</capacity>
-                    <textalign>Bottom</textalign>
-                    <textvisible visible="false" />
+                    <textalign>Top</textalign>
+                    <textvisible visible="true" />
                     <interface>False</interface>
                </toolspecific>
           </place>
@@ -186,7 +186,7 @@
           </place>
           <place id="id19">
                <name>
-                    <text>Place8</text>
+                    <text>TakeoffQueue</text>
                </name>
                <initialMarking>
                     <text>0</text>
@@ -202,7 +202,7 @@
                <toolspecific tool="Petri.NET" version="1.5.5945.12338">
                     <capacity>3</capacity>
                     <textalign>Bottom</textalign>
-                    <textvisible visible="false" />
+                    <textvisible visible="true" />
                     <interface>False</interface>
                </toolspecific>
           </place>
@@ -470,15 +470,6 @@
                     <weight>1</weight>
                </toolspecific>
           </arc>
-          <arc id="id53" source="id42" target="id21">
-               <graphics>
-                    <fill color="White" />
-                    <line color="Black" />
-               </graphics>
-               <toolspecific tool="Petri.NET" version="1.5.5945.12338">
-                    <weight>1</weight>
-               </toolspecific>
-          </arc>
           <arc id="id54" source="id23" target="id15">
                <graphics>
                     <fill color="White" />
@@ -673,11 +664,8 @@
                     <fill color="White" />
                     <line color="Black" />
                </graphics>
-               <capacity>
-                    <text>10</text>
-               </capacity>
                <toolspecific tool="Petri.NET" version="1.5.5945.12338">
-                    <capacity>10</capacity>
+                    <capacity>Unlimited</capacity>
                     <textalign>Bottom</textalign>
                     <textvisible visible="true" />
                     <interface>False</interface>
@@ -703,7 +691,7 @@
           </arc>
           <place id="id86">
                <name>
-                    <text>Place3</text>
+                    <text>GroundControl</text>
                </name>
                <initialMarking>
                     <text>1</text>
@@ -716,7 +704,7 @@
                <toolspecific tool="Petri.NET" version="1.5.5945.12338">
                     <capacity>Unlimited</capacity>
                     <textalign>Bottom</textalign>
-                    <textvisible visible="false" />
+                    <textvisible visible="true" />
                     <interface>False</interface>
                </toolspecific>
           </place>
@@ -751,6 +739,16 @@
           </arc>
           <arc id="id90" source="id25" target="id86">
                <graphics>
+                    <fill color="White" />
+                    <line color="Black" />
+               </graphics>
+               <toolspecific tool="Petri.NET" version="1.5.5945.12338">
+                    <weight>1</weight>
+               </toolspecific>
+          </arc>
+          <arc id="id99" source="id27" target="id21">
+               <graphics>
+                    <position x="340" y="360" />
                     <fill color="White" />
                     <line color="Black" />
                </graphics>

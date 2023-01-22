@@ -36,3 +36,7 @@ Above mentioned types (*AirControl*, *GroundControl*, *Runway*, *Planes*) are re
 --- 
 
 I have tried simulating the run for a while and planes got stuck at landing and departure queue, therefore I have decided to limit number of tokens in such places.
+
+---
+
+![CPN](CPN.PNG)

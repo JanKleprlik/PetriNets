@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pnml>
+     <net id="n1" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+          <name>
+               <text>Net1</text>
+          </name>
+          <declaration>
+               <structure>
+                    <declarations>
+                         <namedsort id="PLN" name="Plane">
+                              <cyclicenumeration>
+                                   <feconstant id="0" name="plane" />
+                              </cyclicenumeration>
+                              <toolspecific tool="Petri.NET" version="1.5.5945.12338">
+                                   <graphics>
+                                        <fill color="Red" />
+                                   </graphics>
+                                   <order ordered="True" />
+                              </toolspecific>
+                         </namedsort>
+                         <variabledecl id="pln" name="pln">
+                              <usersort declaration="PLN" />
+                         </variabledecl>
+                    </declarations>
+               </structure>
+          </declaration>
+          <place id="id1">
+               <name>
+                    <text>CPlace1</text>
+               </name>
+               <graphics>
+                    <position x="180" y="200" />
+                    <fill color="PaleGreen" />
+                    <line color="Black" />
+               </graphics>
+               <type>
+                    <text>PLN</text>
+                    <structure>
+                         <usersort declaration="PLN" />
+                    </structure>
+               </type>
+               <hlinitialMarking>
+                    <text>7`0</text>
+               </hlinitialMarking>
+               <toolspecific tool="Petri.NET" version="1.5.5945.12338">
+                    <textalign>Bottom</textalign>
+                    <textvisible visible="false" />
+                    <interface>False</interface>
+               </toolspecific>
+          </place>
+          <transition id="id2">
+               <name>
+                    <text>CTransition1</text>
+               </name>
+               <graphics>
+                    <position x="340" y="100" />
+                    <fill color="PaleGreen" />
+                    <line color="Black" />
+               </graphics>
+               <condition>
+                    <text />
+                    <!--TODO: write parsed guard-->
+               </condition>
+               <toolspecific tool="Petri.NET" version="1.5.5945.12338">
+                    <orientation>Vertical</orientation>
+                    <priority>100</priority>
+                    <important>False</important>
+                    <abnormal>False</abnormal>
+                    <textalign>Left</textalign>
+                    <textvisible visible="true" />
+                    <command />
+               </toolspecific>
+          </transition>
+          <place id="id3">
+               <name>
+                    <text>CPlace2</text>
+               </name>
+               <graphics>
+                    <position x="460" y="200" />
+                    <fill color="PaleGreen" />
+                    <line color="Black" />
+               </graphics>
+               <type>
+                    <text>PLN</text>
+                    <structure>
+                         <usersort declaration="PLN" />
+                    </structure>
+               </type>
+               <hlinitialMarking>
+                    <text />
+               </hlinitialMarking>
+               <toolspecific tool="Petri.NET" version="1.5.5945.12338">
+                    <textalign>Bottom</textalign>
+                    <textvisible visible="false" />
+                    <interface>False</interface>
+               </toolspecific>
+          </place>
+          <arc id="id4" source="id1" target="id2">
+               <graphics>
+                    <fill color="White" />
+                    <line color="Black" />
+               </graphics>
+               <hlinscription>
+                    <text>
+</text>
+                    <!--TODO: write parsed arc expression-->
+               </hlinscription>
+          </arc>
+          <arc id="id5" source="id2" target="id3">
+               <graphics>
+                    <fill color="White" />
+                    <line color="Black" />
+               </graphics>
+               <hlinscription>
+                    <text>
+</text>
+                    <!--TODO: write parsed arc expression-->
+               </hlinscription>
+          </arc>
+          <place id="id7">
+               <name>
+                    <text>CPlace3</text>
+               </name>
+               <graphics>
+                    <position x="180" y="460" />
+                    <fill color="PaleGreen" />
+                    <line color="Black" />
+               </graphics>
+               <type>
+                    <text>PLN</text>
+                    <structure>
+                         <usersort declaration="PLN" />
+                    </structure>
+               </type>
+               <hlinitialMarking>
+                    <text>4`plane</text>
+               </hlinitialMarking>
+               <toolspecific tool="Petri.NET" version="1.5.5945.12338">
+                    <textalign>Bottom</textalign>
+                    <textvisible visible="false" />
+                    <interface>False</interface>
+               </toolspecific>
+          </place>
+          <place id="id8">
+               <name>
+                    <text>CPlace4</text>
+               </name>
+               <graphics>
+                    <position x="400" y="480" />
+                    <fill color="PaleGreen" />
+                    <line color="Black" />
+               </graphics>
+               <type>
+                    <text>PLN</text>
+                    <structure>
+                         <usersort declaration="PLN" />
+                    </structure>
+               </type>
+               <hlinitialMarking>
+                    <text />
+               </hlinitialMarking>
+               <toolspecific tool="Petri.NET" version="1.5.5945.12338">
+                    <textalign>Bottom</textalign>
+                    <textvisible visible="false" />
+                    <interface>False</interface>
+               </toolspecific>
+          </place>
+          <transition id="id11">
+               <name>
+                    <text>CTransition2</text>
+               </name>
+               <graphics>
+                    <position x="300" y="420" />
+                    <fill color="PaleGreen" />
+                    <line color="Black" />
+               </graphics>
+               <condition>
+                    <text />
+                    <!--TODO: write parsed guard-->
+               </condition>
+               <toolspecific tool="Petri.NET" version="1.5.5945.12338">
+                    <orientation>Vertical</orientation>
+                    <priority>100</priority>
+                    <important>False</important>
+                    <abnormal>False</abnormal>
+                    <textalign>Bottom</textalign>
+                    <textvisible visible="false" />
+                    <command />
+               </toolspecific>
+          </transition>
+          <arc id="id12" source="id7" target="id11">
+               <graphics>
+                    <fill color="White" />
+                    <line color="Black" />
+               </graphics>
+               <hlinscription>
+                    <text />
+                    <!--TODO: write parsed arc expression-->
+               </hlinscription>
+          </arc>
+          <arc id="id13" source="id11" target="id8">
+               <graphics>
+                    <fill color="White" />
+                    <line color="Black" />
+               </graphics>
+               <hlinscription>
+                    <text />
+                    <!--TODO: write parsed arc expression-->
+               </hlinscription>
+          </arc>
+     </net>
+</pnml>

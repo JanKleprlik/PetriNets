@@ -31,7 +31,7 @@ Third loop is for *Ground Control* which is responsible for the communication wi
 
 There is aditional loop and type of token for *Runways*, this type of token represents wether ther is an empty runway.
 
-Above mentioned types (*AirControl*, *GroundControl*, *Runway*, *Planes*) are represented by tokens. We could use different colors for each type, but PetriDotNet did not allow me to define the types. However we can see that different types are not necessary as each type has its own loop and tokens can not get mixed up.
+Above mentioned types (*AirControl*, *GroundControl*, *Runway*, *Planes*) are represented by tokens. We could use different colors for each type, but as I have figured out after a few hours PetriDotNet for colored nets does not work. However we can see that different types are not necessary as each type has its own loop and tokens can not get mixed up. I have modified the net a little bit and made it colored. This approach is described below together with example situation of how is PetriDotNet broken for colored nets.
 
 --- 
 
@@ -40,3 +40,17 @@ I have tried simulating the run for a while and planes got stuck at landing and 
 ---
 
 ![CPN](CPN.PNG)
+
+---
+
+I have modified the above described net a little bit. Mostly removed nodes which were not necessary. I planned to introduce size for planes and runways and differentiate which plane uses which runway. However I later found out that colored nets do not work at all. We can see in `NotWorking.pnml` example that the top net moves tokens even though when running the simulation it should not and the transition node is marked as unusable. The bottom net is the same as the top one, but without any explicit guards or arc expressions. I have figured out that once we put anything to the arc expressions (even a line-feed) the transition will always go through no matter wether it should or not. On the following picture the top net is the one with explicit guards (shows that it wont run, but it runs, and it should show that it will run) and the bottom one is the one without any guards (shows that it wont run, it does not run, but we should be able to run it).
+
+> Note that the issue to make the nets incorectly run using guards might require to rewrite the guards to work.
+
+
+![CPN](NotWorking.PNG)
+
+
+This is the colored CPN:
+
+![CPN](Colored.PNG)
